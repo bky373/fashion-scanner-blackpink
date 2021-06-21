@@ -8,6 +8,7 @@
 6. [세부 일정](#6-세부-일정)
 7. [역할](#7-역할)
 8. [아키텍처 설계](#8-아키텍처-설계)
+9. [유스케이스 다이어그램](#9-유스케이스-다이어그램)
 
 ## 1. 웹 서비스 소개
 
@@ -89,4 +90,8 @@ https://www.figma.com/file/UpQVmuk7wFVKmdUTBRpiTZ/%EB%B8%94%EB%9E%99%ED%95%91%ED
 ## 8. 아키텍처 설계
 
 ![image](https://user-images.githubusercontent.com/49539592/122783731-c8eca980-d2ec-11eb-842b-c02b62169cfa.png)
+
+## 9. 유스케이스 다이어그램
+
+![image](https://user-images.githubusercontent.com/49539592/122783093-377d3780-d2ec-11eb-9369-bf7aa2cada45.png)
 

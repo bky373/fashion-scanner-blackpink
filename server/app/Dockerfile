@@ -19,7 +19,7 @@ COPY ./requirements.txt .
 RUN pip install -U pip \
     --ignore-installed ruamel-yaml \
     -r requirements.txt \
-    torch==1.8.1+cpu torchvision==0.9.1+cpu -f https://download.pytorch.org/whl/torch_stable.html
+    --no-cache torch==1.8.1+cpu torchvision==0.9.1+cpu -f https://download.pytorch.org/whl/torch_stable.html
 
 COPY ai/mmfashion .
 RUN python setup.py install

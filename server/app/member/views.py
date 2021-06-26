@@ -92,18 +92,26 @@ class MemberLookbookAPIView(APIView):
             format: 포맷 접미사 (json 등)
 
         Returns:
-            JSON 문자열:
-                lookbook_data:
-                    lookbook id,
-                    lookbook 이미지,
-                    의류 색상,
-                    의류 카테고리,
-                    의류 속성 리스트,
-                    비슷한 의류 리스트
-                symbol_color:
-                    멤버 상징색
-                status_code:
-                    상태 코드
+            Response:
+                JSON:
+                    lookbook_data_en:
+                        lookbook id,
+                        lookbook 이미지,
+                        의류 색상,
+                        의류 카테고리,
+                        의류 속성 리스트,
+                        비슷한 의류 리스트
+                    lookbook_data_ko:
+                        lookbook id,
+                        lookbook 이미지,
+                        의류 색상,
+                        의류 카테고리,
+                        의류 속성 리스트,
+                        비슷한 의류 리스트
+                    symbol_color:
+                        멤버 상징색
+                    status_code:
+                        상태 코드
         """
         if not (1 <= pk <= 4):
             raise NotFound({"message": "멤버가 존재하지 않습니다."})

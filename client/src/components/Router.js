@@ -1,4 +1,4 @@
-import React from 'react';
+import { React, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import LangProvider from 'context/LanguageContext';
 import Home from 'routes/Home';
@@ -17,8 +17,14 @@ import SharingRose from 'routes/SharingRose';
 import DevTeam from 'routes/DevTeam';
 import FAQ from 'routes/FAQ';
 import NotFound from 'routes/NotFound';
+import ReactGA from 'react-ga';
 
 const AppRouter = () => {
+  useEffect(() => {
+    ReactGA.initialize('UA-202537754-1');
+    ReactGA.pageview(window.location.pathname + window.location.search);
+  }, [])
+
   return (
     <LangProvider>
       <Router>

@@ -7,6 +7,8 @@
 5. [와이어 프레임](#5-와이어-프레임)
 6. [세부 일정](#6-세부-일정)
 7. [역할](#7-역할)
+8. [서비스 실행](#8-서비스-실행)
+
 
 ## 1. 웹 서비스 소개
 
@@ -84,3 +86,36 @@ https://www.figma.com/file/UpQVmuk7wFVKmdUTBRpiTZ/%EB%B8%94%EB%9E%99%ED%95%91%ED
 | 박정환 | 프론트엔드     |
 | 이찬미 | 인공지능       |
 | 차시현 | 기획, 인공지능 |
+
+
+## 8. 서비스 실행
+
+### client
+
+```bash
+// client 폴더 위치에서
+// 프론트 [운영 모드] 도커 이미지 빌드
+docker build -t [이미지 이름] -f Dockerfile_prod .
+
+// client 폴더 위치에서
+// 프론트 [운영 모드] 컨테이너 실행
+ docker run --rm -d --name [컨테이너 이름] -v '/etc/letsencrypt:/etc/letsencrypt' -v '/var/lib/letsencrypt:/var/lib/letsencrypt' -p 80:80 -p 443:443 [이미지 이름]
+```
+
+### server
+
+- server 폴더로 이동 후 아래 명령 실행
+
+```bash
+// server 폴더 위치에서 아래 두 개의 명령어 중 원하는 모드로 명령 실행
+// 서버 [개발 모드] 도커 이미지 빌드 
+docker-compose build
+// 서버 [운영 모드] 도커 이미지 빌드
+docker-compose -f docker-compose.prod.yml build
+
+// server 폴더 위치에서 아래 두 개의 명령어 중 원하는 모드로 명령 실행
+// 서버 [개발 모드] 컨테이너 실행
+docker-compose up
+// 서버 [운영 모드] 컨테이너 실행
+docker-compose -f docker-compose.prod.yml up
+```

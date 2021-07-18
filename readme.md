@@ -104,8 +104,6 @@ docker build -t [이미지 이름] -f Dockerfile_prod .
 
 ### server
 
-- server 폴더로 이동 후 아래 명령 실행
-
 ```bash
 // server 폴더 위치에서 아래 두 개의 명령어 중 원하는 모드로 명령 실행
 // 서버 [개발 모드] 도커 이미지 빌드 

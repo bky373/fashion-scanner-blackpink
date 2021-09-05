@@ -205,13 +205,13 @@ const Picture = () => {
           <div className="picture__submit">
             {localStorage.i18nextLng === 'en' ? (
               <>
-                <button disabled={!isChecked} onClick={() => {onSubmitEn; ReactGA.event({category: 'Matching Submit', action: 'Submit'});}}>
+                <button disabled={!isChecked} onClick={() => {onSubmitEn(); ReactGA.event({category: 'Matching Submit', action: 'Submit'});}}>
                   {t('picture_submit')}
                 </button>           
               </>
             ) : (
               <>
-                <button disabled={!isChecked} onClick={() => {onSubmitKo; ReactGA.event({category: 'Matching Submit', action: 'Submit'});}}>
+                <button disabled={!isChecked} onClick={() => {onSubmitKo(); ReactGA.event({category: 'Matching Submit', action: 'Submit'});}}>
                   {t('picture_submit')}
                 </button>
               </>

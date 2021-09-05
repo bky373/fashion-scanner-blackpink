@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Navigation, Thumbs } from 'swiper';
 import 'components/lookbookComponents/css/LookbookMain.css';
 import 'swiper/swiper-bundle.css';
+import ReactGA from 'react-ga';
 
 SwiperCore.use([Navigation, Thumbs]);
 
@@ -135,7 +136,7 @@ const LookbookMain = ({ member, memberEn, memberColor }) => {
                     {similarList.map((similar, idx) => {
                       return (
                         <div className="lookbookmain__recommimg" key={idx}>
-                          <a target="_blank" href={similar.link}>
+                          <a target="_blank" href={similar.link} onClick={ReactGA.event({category: 'Similar Look Store', action: 'Click'})}>
                             <div className="lookbookmain__gotomall">
                               <span>go to the mall</span>
                             </div>

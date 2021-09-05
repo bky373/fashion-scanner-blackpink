@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Navigation, Thumbs } from 'swiper';
 import 'components/lookbookComponents/css/MobileLookbookMain.css';
 import 'swiper/swiper-bundle.css';
+import ReactGA from 'react-ga';
 
 SwiperCore.use([Navigation, Thumbs]);
 
@@ -126,7 +127,7 @@ const MobileLookbookMain = ({ member, memberEn }) => {
               {similarList.map((similar, idx) => {
                 return (
                   <div key={idx}>
-                    <a target="_blank" href={similar.link}>
+                    <a target="_blank" href={similar.link} onClick={ReactGA.event({category: 'Similar Look Store', action: 'Click'})}>
                       <img src={similar.image} alt="recommend image" />
                     </a>
                   </div>

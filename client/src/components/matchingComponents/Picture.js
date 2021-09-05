@@ -6,6 +6,7 @@ import axios from 'axios';
 import swal from 'sweetalert';
 import Example from 'components/matchingComponents/Example';
 import 'components/matchingComponents/css/Picture.css';
+import ReactGA from 'react-ga';
 
 const Picture = () => {
   const isMobile = useMediaQuery({ maxWidth: 500 });
@@ -204,13 +205,13 @@ const Picture = () => {
           <div className="picture__submit">
             {localStorage.i18nextLng === 'en' ? (
               <>
-                <button disabled={!isChecked} onClick={onSubmitEn}>
+                <button disabled={!isChecked} onClick={() => {onSubmitEn; ReactGA.event({category: 'Matching Submit', action: 'Submit'});}}>
                   {t('picture_submit')}
-                </button>
+                </button>           
               </>
             ) : (
               <>
-                <button disabled={!isChecked} onClick={onSubmitKo}>
+                <button disabled={!isChecked} onClick={() => {onSubmitKo; ReactGA.event({category: 'Matching Submit', action: 'Submit'});}}>
                   {t('picture_submit')}
                 </button>
               </>
